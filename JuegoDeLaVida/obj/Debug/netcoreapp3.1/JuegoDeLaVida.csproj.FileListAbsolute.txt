@@ -1,0 +1,14 @@
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.exe
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.deps.json
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.runtimeconfig.json
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.runtimeconfig.dev.json
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.dll
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.pdb
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.csproj.AssemblyReference.cache
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.AssemblyInfoInputs.cache
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.AssemblyInfo.cs
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.csproj.CoreCompileInputs.cache
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.dll
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.pdb
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.genruntimeconfig.cache
