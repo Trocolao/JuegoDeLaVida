@@ -4,194 +4,242 @@ namespace JuegoDeLaVida
 {
     internal class Program
     {
-        static Celula viva = new Celula(true);
-        static Celula muerta = new Celula(false);
         static void Main(string[] args)
         {
-            Celula[,] tab = new Celula[5, 5] {
-                { muerta,viva,muerta,viva,viva},
-                { muerta, viva, muerta, viva, viva },
-                { muerta, viva, muerta, viva, viva },
-                { muerta, viva, muerta, viva, viva },
-                { muerta, viva, muerta, viva, viva } };
-            Tablero tablero1 = new Tablero(5, 5);
-            Tablero tablero2=new Tablero(5, 5);
-            RellenarTablero(tab, tablero1);
-            int iteracion;
-            printarArray(tablero1.TableroCelulas);
-            for (int ite = 0; ite < 10; ite++)
+            int numfilas=5;
+            int numcol=5;
+            int numiteraciones = 10;
+            Tablero tablero1 = new Tablero(numfilas, numcol);           
+            RellenarTablero(tablero1);
+            printarArray(tablero1);
+            for (int ite = 0; ite < numiteraciones; ite++)
             {
-                Celula[,] tab2 = new Celula[5, 5];
-                RellenarTablero(tab2, tablero2);
-                for (int i = 0; i < 5; i++)
+                Tablero tablero2 = new Tablero(numfilas,numcol);               
+                for (int fila = 0; fila < numfilas; fila++)
                 {
-                    for (int j = 0; j < 5; j++)
+                    for (int columna = 0; columna < numcol; columna++)
                     {
-                        iteracion = 0;
-                        if (tablero1.TableroCelulas[i, j] == muerta)
+                        int contadorCelulasVivas = 0;
+                        if (!tablero1.TableroCelulas[fila, columna].TieneVida)
                         {
-                            iteracion = getIteracionesCelula(tablero1, iteracion, i, j);
-                            getEstadoCelulaMuerta(iteracion, tablero2, i, j);
+                            contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, fila, columna,numfilas-1,numcol-1);
+                            getEstadoCelulaMuerta(contadorCelulasVivas, tablero2, fila, columna);
                         }
                         else
                         {
-                            iteracion = getIteracionesCelula(tablero1, iteracion, i, j);
-                            getEstadoCelulaViva(iteracion, tablero2, i, j);
+                            contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, fila, columna, numfilas - 1, numcol - 1);
+                            getEstadoCelulaViva(contadorCelulasVivas, tablero2, fila, columna);
                         }
                     }
                 }
                 Console.WriteLine();
-                printarArray(tablero2.TableroCelulas);
-                RellenarTablero(tablero2.TableroCelulas, tablero1);
+                printarArray(tablero2);
+                tablero1 = tablero2;
             }
+        }
+        private static void RellenarTablero(Tablero tablero1)
+        {
+            tablero1.TableroCelulas[0, 1].TieneVida = true;
+            tablero1.TableroCelulas[0, 3].TieneVida = true;
+            tablero1.TableroCelulas[0, 4].TieneVida = true;
+            tablero1.TableroCelulas[1, 1].TieneVida = true;
+            tablero1.TableroCelulas[1, 3].TieneVida = true;
+            tablero1.TableroCelulas[1, 4].TieneVida = true;
+            tablero1.TableroCelulas[2, 1].TieneVida = true;
+            tablero1.TableroCelulas[2, 3].TieneVida = true;
+            tablero1.TableroCelulas[2, 4].TieneVida = true;
+            tablero1.TableroCelulas[3, 1].TieneVida = true;
+            tablero1.TableroCelulas[3, 3].TieneVida = true;
+            tablero1.TableroCelulas[3, 4].TieneVida = true;
+            tablero1.TableroCelulas[4, 1].TieneVida = true;
+            tablero1.TableroCelulas[4, 3].TieneVida = true;
+            tablero1.TableroCelulas[4, 4].TieneVida = true;
+        }
+        private static int GetNumeroCelulasVivas(Tablero tablero1, int fila, int columna, int maxcolumna, int maxfila)
+        {
+            int contadorCelulasVivas=0;
+            if (fila == 0 && columna == 0)
+            {
+                contadorCelulasVivas = GetCelulasVivasEsquinaSuperiorIzquierda(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else if (fila == 0 && columna == maxcolumna)
+            {
+                contadorCelulasVivas = GetCelulasVivasEsquinaSuperiorDerecha(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else if (fila == maxfila && columna == 0)
+            {
+                contadorCelulasVivas = GetCelulasVivasEsquinaInferiorIzquierda(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else if (fila == maxfila && columna == maxcolumna)
+            {
+                contadorCelulasVivas = GetCelulasVivasEsquinaInferiorDerecha(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else if (fila == 0)
+            {
+                contadorCelulasVivas = GetCelulasVivasPrimeraFila(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else if (columna == 0)
+            {
+                contadorCelulasVivas = GetCelulasVivasPrimeraColumna(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else if (columna == maxcolumna)
+            {
+                contadorCelulasVivas = GetCelulasVivasUltimaColumna(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else if (fila == maxfila)
+            {
+                contadorCelulasVivas = GetCelulasVivasUltimaFila(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            else
+            {
+                contadorCelulasVivas = GetCelulasVivasSectorInterior(tablero1, fila, columna, contadorCelulasVivas);
+            }
+            return contadorCelulasVivas;
         }
 
-        private static void RellenarTablero(Celula[,] tab, Tablero tablero1)
+        private static int GetCelulasVivasSectorInterior(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
         {
-            for (int il = 0; il < 5; il++)
+            for (int filaVecina = fila - 1; filaVecina < fila + 2; filaVecina++)
             {
-                for (int jl = 0; jl < 5; jl++)
+                for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    tablero1.TableroCelulas[il, jl] = tab[il, jl];
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
                 }
-            }
-        }
-        private static int getIteracionesCelula(Tablero tablero1, int iteracion, int i, int j)
-        {
-            if (i == 0 && j == 0)
-            {
-                for (int k = i; k < i + 2; k++)
-                {
-                    for (int l = j; l < j + 2; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else if (i == 0 && j == 4)
-            {
-                for (int k = i; k < i + 2; k++)
-                {
-                    for (int l = j - 1; l < j + 1; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else if (i == 4 && j == 0)
-            {
-                for (int k = i - 1; k < i + 1; k++)
-                {
-                    for (int l = j; l < j + 2; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else if (i == 4 && j == 4)
-            {
-                for (int k = i - 1; k < i + 1; k++)
-                {
-                    for (int l = j - 1; l < j + 1; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else if (i == 0)
-            {
-                for (int k = i; k < i + 2; k++)
-                {
-                    for (int l = j - 1; l < j + 2; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else if (j == 0)
-            {
-                for (int k = i - 1; k < i + 2; k++)
-                {
-                    for (int l = j; l < j + 2; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else if (j == 4)
-            {
-                for (int k = i - 1; k < i + 2; k++)
-                {
-                    for (int l = j - 1; l < j + 1; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else if (i == 4)
-            {
-                for (int k = i - 1; k < i + 1; k++)
-                {
-                    for (int l = j - 1; l < j + 2; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            else
-            {
-                for (int k = i - 1; k < i + 2; k++)
-                {
-                    for (int l = j - 1; l < j + 2; l++)
-                    {
-                        iteracion = getIteracion(tablero1, iteracion, k, l);
-                    }
-                }
-            }
-            return iteracion;
-        }
-        private static void getEstadoCelulaMuerta(int iteracion,Tablero tablero2, int i, int j)
-        {
-            if (iteracion == 3)
-            {
-                tablero2.TableroCelulas[i, j] = viva;
-            }
-            else
-            {
-                tablero2.TableroCelulas[i, j] = muerta;
-            }
-        }
-        private static void getEstadoCelulaViva(int iteracion,Tablero tablero2, int i, int j)
-        {
-            if (iteracion < 3)
-            {
-                tablero2.TableroCelulas[i, j] = muerta;
-            }
-            else if (iteracion > 4)
-            {
-                tablero2.TableroCelulas[i, j] = muerta;
-            }
-            else
-            {
-                tablero2.TableroCelulas[i, j] = viva;
-            }
-        }
-        private static int getIteracion(Tablero tablero1, int iteracion, int k, int l)
-        {
-            if (tablero1.TableroCelulas[k, l] == viva)
-            {
-                iteracion++;
             }
 
-            return iteracion;
+            return contadorCelulasVivas;
         }
-        public static void printarArray(Celula[,] arr)
+        private static int GetCelulasVivasUltimaFila(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
         {
-            for (int i = 0; i < 5; i++)
+            for (int filaVecina = fila - 1; filaVecina < fila + 1; filaVecina++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    if (arr[i, j] == viva) {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+            return contadorCelulasVivas;
+        }
+        private static int GetCelulasVivasUltimaColumna(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
+        {
+            for (int filaVecina = fila - 1; filaVecina < fila + 2; filaVecina++)
+            {
+                for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
+                {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+            return contadorCelulasVivas;
+        }
+        private static int GetCelulasVivasPrimeraColumna(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
+        {
+            for (int filaVecina = fila - 1; filaVecina < fila + 2; filaVecina++)
+            {
+                for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
+                {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+            return contadorCelulasVivas;
+        }
+        private static int GetCelulasVivasPrimeraFila(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
+        {
+            for (int filaVecina = fila; filaVecina < fila + 2; filaVecina++)
+            {
+                for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
+                {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+            return contadorCelulasVivas;
+        }
+        private static int GetCelulasVivasEsquinaInferiorDerecha(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
+        {
+            for (int filaVecina = fila - 1; filaVecina < fila + 1; filaVecina++)
+            {
+                for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
+                {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+            return contadorCelulasVivas;
+        }
+        private static int GetCelulasVivasEsquinaInferiorIzquierda(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
+        {
+            for (int filaVecina = fila - 1; filaVecina < fila + 1; filaVecina++)
+            {
+                for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
+                {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+            return contadorCelulasVivas;
+        }
+        private static int GetCelulasVivasEsquinaSuperiorDerecha(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
+        {
+            for (int filaVecina = fila; filaVecina < fila + 2; filaVecina++)
+            {
+                for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
+                {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+
+            return contadorCelulasVivas;
+        }
+        private static int GetCelulasVivasEsquinaSuperiorIzquierda(Tablero tablero1, int fila, int columna, int contadorCelulasVivas)
+        {
+            for (int filaVecina = fila; filaVecina < fila + 2; filaVecina++)
+            {
+                for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
+                {
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                }
+            }
+            return contadorCelulasVivas;
+        }
+        private static void getEstadoCelulaMuerta(int contadorCelulasVivas,Tablero tablero2, int fila, int columna)
+        {
+            if (contadorCelulasVivas == 3)
+            {
+                tablero2.TableroCelulas[fila, columna].TieneVida = true;
+            }
+            else
+            {
+                tablero2.TableroCelulas[fila, columna].TieneVida = false;
+            }
+        }
+        private static void getEstadoCelulaViva(int contadorCelulasVivas,Tablero tablero2, int fila, int columna)
+        {
+            if (contadorCelulasVivas < 3)
+            {
+                tablero2.TableroCelulas[fila, columna].TieneVida = false;
+            }
+            else if (contadorCelulasVivas > 4)
+            {
+                tablero2.TableroCelulas[fila, columna].TieneVida = false;
+            }
+            else
+            {
+                tablero2.TableroCelulas[fila, columna].TieneVida = true;
+            }
+        }
+        private static int GetContadorCelulasVivas(Tablero tablero1, int contadorCelulasVivas, int filaVecina, int columnaVecina)
+        {
+            if (tablero1.TableroCelulas[filaVecina, columnaVecina].TieneVida)
+            {
+                contadorCelulasVivas++;
+            }
+
+            return contadorCelulasVivas;
+        }
+        public static void printarArray(Tablero tablero)
+        {
+            for (int fila = 0; fila < tablero.NumFilas; fila++)
+            {
+                for (int columna = 0; columna < tablero.NumColumnas; columna++)
+                {
+                    if (tablero.TableroCelulas[fila, columna].TieneVida) {
 
                         Console.Write("[" + "*" + "]");
                     }

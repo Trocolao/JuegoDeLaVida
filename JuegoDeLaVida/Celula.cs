@@ -11,6 +11,5 @@ namespace JuegoDeLaVida
             TieneVida = tieneVida;
         }
         public Boolean TieneVida { get; set; }
-
     }
 }
