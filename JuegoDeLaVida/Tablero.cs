@@ -6,23 +6,19 @@ namespace JuegoDeLaVida
 {
     internal class Tablero
     {
-        Celula[,] tablero;
-
-        public Tablero(Celula[,] tablero)
+        Celula[,] _tablero;
+        int _filas;
+        int _columnas;
+        static Celula viva = new Celula(true);
+        static Celula muerta = new Celula(false);
+        public Tablero(int filas,int columnas)
         {
-
-            this.tablero = tablero;
+            _tablero = new Celula[filas,columnas]; 
         }
-
-
-        public Celula[,] getTablero()
-        {
-            return tablero;
-        }
-
-        public void setTablero(Celula[,] tablero)
-        {
-            this.tablero = tablero;
+        public Celula[,] TableroCelulas { 
+            get {
+                return _tablero;
+           }
         }
     }
 }
