@@ -29,7 +29,6 @@ namespace JuegoDeLaVida
                 return _tablero;
             }
         }
-
         public int NumFilas
         {
             get
