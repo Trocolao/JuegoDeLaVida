@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace JuegoDeLaVida
 {
     internal class Gestor
     {
-        int numfilas_;
-        int numcol_;
-        int numiteraciones_;
-        public Gestor(int numfilas,int numcol,int numiteraciones) { 
-            numfilas_= numfilas;
-            numcol_ = numcol;
-            numiteraciones_ = numiteraciones;
+        public Gestor() { 
         }
         public Tablero getTableroActualizado(int numfilas, int numcol, Tablero tablero1, Tablero tablero2)
         {
@@ -35,8 +30,7 @@ namespace JuegoDeLaVida
             }
             tablero1 = tablero2;
             return tablero1;
-        }
-        
+        }        
         private static int GetNumeroCelulasVivas(Tablero tablero1, int fila, int columna, int maxcolumna, int maxfila)
         {
             int contadorCelulasVivas = 0;

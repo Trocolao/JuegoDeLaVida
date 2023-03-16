@@ -6,17 +6,16 @@ namespace JuegoDeLaVida
     {
         static void Main(string[] args)
         {
-            int numfilas=5;
-            int numcolumnas=5;
             int numiteraciones=10;
-            Tablero tablero1 = new Tablero(numfilas, numcolumnas);
-            Gestor gestor= new Gestor(numfilas,numcolumnas,numiteraciones);
-            RellenarTablero(tablero1);
-            
+            Gestor gestor = new Gestor();
+            int numerofilas=5;
+            int numerocolumnas = 5;
+            Tablero tablero1 = new Tablero(numerofilas, numerocolumnas);
+            RellenarTablero(tablero1);           
             for (int ite = 0; ite < numiteraciones; ite++)
             {
                 printarArray(tablero1);
-                tablero1 = gestor.getTableroActualizado(numfilas, numcolumnas, tablero1, new Tablero(numfilas,numcolumnas));
+                tablero1 = gestor.getTableroActualizado(tablero1.NumFilas, tablero1.NumColumnas, tablero1, new Tablero(tablero1.NumFilas, tablero1.NumColumnas));
                 Console.WriteLine();
             }
         }
@@ -28,7 +27,6 @@ namespace JuegoDeLaVida
                 {
                     if (tablero.TableroCelulas[fila, columna].TieneVida)
                     {
-
                         Console.Write("[" + "*" + "]");
                     }
                     else
@@ -57,7 +55,6 @@ namespace JuegoDeLaVida
             tablero1.TableroCelulas[4, 3].TieneVida = true;
             tablero1.TableroCelulas[4, 4].TieneVida = true;
         }
-
     }
 }
 
