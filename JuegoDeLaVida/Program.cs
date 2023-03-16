@@ -15,8 +15,7 @@ namespace JuegoDeLaVida
             printarArray(tablero1);
             for (int ite = 0; ite < numiteraciones; ite++)
             {
-                tablero1 = gestor.getTableroActualizado(tablero1);
-                Console.WriteLine();
+                tablero1 = gestor.GetTableroActualizado(tablero1);                
                 printarArray(tablero1);
             }
         }
@@ -37,6 +36,7 @@ namespace JuegoDeLaVida
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine();
         }
         public static void RellenarTablero(Tablero tablero1)
         {
