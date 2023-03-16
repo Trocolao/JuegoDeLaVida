@@ -7,18 +7,57 @@ namespace JuegoDeLaVida
         static void Main(string[] args)
         {
             int numfilas=5;
-            int numcol=5;
-            int numiteraciones = 10;
-            Tablero tablero1 = new Tablero(numfilas, numcol);
-            Gestor gestor= new Gestor();
-            gestor.RellenarTablero(tablero1);
-            gestor.printarArray(tablero1);
+            int numcolumnas=5;
+            int numiteraciones=10;
+            Tablero tablero1 = new Tablero(numfilas, numcolumnas);
+            Gestor gestor= new Gestor(numfilas,numcolumnas,numiteraciones);
+            RellenarTablero(tablero1);
+            
             for (int ite = 0; ite < numiteraciones; ite++)
             {
-                Tablero tablero2 = new Tablero(numfilas, numcol);
-                tablero1 = gestor.getTableroActualizado(numfilas, numcol, tablero1, tablero2);
+                printarArray(tablero1);
+                tablero1 = gestor.getTableroActualizado(numfilas, numcolumnas, tablero1, new Tablero(numfilas,numcolumnas));
+                Console.WriteLine();
             }
         }
+        public static void printarArray(Tablero tablero)
+        {
+            for (int fila = 0; fila < tablero.NumFilas; fila++)
+            {
+                for (int columna = 0; columna < tablero.NumColumnas; columna++)
+                {
+                    if (tablero.TableroCelulas[fila, columna].TieneVida)
+                    {
+
+                        Console.Write("[" + "*" + "]");
+                    }
+                    else
+                    {
+                        Console.Write("[" + " " + "]");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+        public static void RellenarTablero(Tablero tablero1)
+        {
+            tablero1.TableroCelulas[0, 1].TieneVida = true;
+            tablero1.TableroCelulas[0, 3].TieneVida = true;
+            tablero1.TableroCelulas[0, 4].TieneVida = true;
+            tablero1.TableroCelulas[1, 1].TieneVida = true;
+            tablero1.TableroCelulas[1, 3].TieneVida = true;
+            tablero1.TableroCelulas[1, 4].TieneVida = true;
+            tablero1.TableroCelulas[2, 1].TieneVida = true;
+            tablero1.TableroCelulas[2, 3].TieneVida = true;
+            tablero1.TableroCelulas[2, 4].TieneVida = true;
+            tablero1.TableroCelulas[3, 1].TieneVida = true;
+            tablero1.TableroCelulas[3, 3].TieneVida = true;
+            tablero1.TableroCelulas[3, 4].TieneVida = true;
+            tablero1.TableroCelulas[4, 1].TieneVida = true;
+            tablero1.TableroCelulas[4, 3].TieneVida = true;
+            tablero1.TableroCelulas[4, 4].TieneVida = true;
+        }
+
     }
 }
 

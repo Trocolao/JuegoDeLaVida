@@ -6,6 +6,14 @@ namespace JuegoDeLaVida
 {
     internal class Gestor
     {
+        int numfilas_;
+        int numcol_;
+        int numiteraciones_;
+        public Gestor(int numfilas,int numcol,int numiteraciones) { 
+            numfilas_= numfilas;
+            numcol_ = numcol;
+            numiteraciones_ = numiteraciones;
+        }
         public Tablero getTableroActualizado(int numfilas, int numcol, Tablero tablero1, Tablero tablero2)
         {
             for (int fila = 0; fila < numfilas; fila++)
@@ -25,29 +33,10 @@ namespace JuegoDeLaVida
                     }
                 }
             }
-            Console.WriteLine();
-            printarArray(tablero2);
             tablero1 = tablero2;
             return tablero1;
         }
-        public void RellenarTablero(Tablero tablero1)
-        {
-            tablero1.TableroCelulas[0, 1].TieneVida = true;
-            tablero1.TableroCelulas[0, 3].TieneVida = true;
-            tablero1.TableroCelulas[0, 4].TieneVida = true;
-            tablero1.TableroCelulas[1, 1].TieneVida = true;
-            tablero1.TableroCelulas[1, 3].TieneVida = true;
-            tablero1.TableroCelulas[1, 4].TieneVida = true;
-            tablero1.TableroCelulas[2, 1].TieneVida = true;
-            tablero1.TableroCelulas[2, 3].TieneVida = true;
-            tablero1.TableroCelulas[2, 4].TieneVida = true;
-            tablero1.TableroCelulas[3, 1].TieneVida = true;
-            tablero1.TableroCelulas[3, 3].TieneVida = true;
-            tablero1.TableroCelulas[3, 4].TieneVida = true;
-            tablero1.TableroCelulas[4, 1].TieneVida = true;
-            tablero1.TableroCelulas[4, 3].TieneVida = true;
-            tablero1.TableroCelulas[4, 4].TieneVida = true;
-        }
+        
         private static int GetNumeroCelulasVivas(Tablero tablero1, int fila, int columna, int maxcolumna, int maxfila)
         {
             int contadorCelulasVivas = 0;
@@ -95,7 +84,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -106,7 +95,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -117,7 +106,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -128,7 +117,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -139,7 +128,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -150,7 +139,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -161,7 +150,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -172,7 +161,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
                 }
             }
             return contadorCelulasVivas;
@@ -183,7 +172,7 @@ namespace JuegoDeLaVida
             {
                 for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina);
+                        contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina,fila,columna);
                 }
             }
             return contadorCelulasVivas;
@@ -201,11 +190,11 @@ namespace JuegoDeLaVida
         }
         private static void getEstadoCelulaViva(int contadorCelulasVivas, Tablero tablero2, int fila, int columna)
         {
-            if (contadorCelulasVivas < 3)
+            if (contadorCelulasVivas < 2)
             {
                 tablero2.TableroCelulas[fila, columna].TieneVida = false;
             }
-            else if (contadorCelulasVivas > 4)
+            else if (contadorCelulasVivas > 3)
             {
                 tablero2.TableroCelulas[fila, columna].TieneVida = false;
             }
@@ -214,33 +203,13 @@ namespace JuegoDeLaVida
                 tablero2.TableroCelulas[fila, columna].TieneVida = true;
             }
         }
-        private static int GetContadorCelulasVivas(Tablero tablero1, int contadorCelulasVivas, int filaVecina, int columnaVecina)
+        private static int GetContadorCelulasVivas(Tablero tablero1, int contadorCelulasVivas, int filaVecina, int columnaVecina, int fila, int columna)
         {
-            if (tablero1.TableroCelulas[filaVecina, columnaVecina].TieneVida)
+            if (tablero1.TableroCelulas[filaVecina, columnaVecina].TieneVida && tablero1.TableroCelulas[filaVecina, columnaVecina]!= tablero1.TableroCelulas[fila, columna])
             {
                 contadorCelulasVivas++;
             }
-
             return contadorCelulasVivas;
-        }
-        public void printarArray(Tablero tablero)
-        {
-            for (int fila = 0; fila < tablero.NumFilas; fila++)
-            {
-                for (int columna = 0; columna < tablero.NumColumnas; columna++)
-                {
-                    if (tablero.TableroCelulas[fila, columna].TieneVida)
-                    {
-
-                        Console.Write("[" + "*" + "]");
-                    }
-                    else
-                    {
-                        Console.Write("[" + " " + "]");
-                    }
-                }
-                Console.WriteLine();
-            }
         }
     }
 }
