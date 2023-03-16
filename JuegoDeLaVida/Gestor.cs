@@ -9,21 +9,22 @@ namespace JuegoDeLaVida
     {
         public Gestor() { 
         }
-        public Tablero getTableroActualizado(int numfilas, int numcol, Tablero tablero1, Tablero tablero2)
+        public Tablero getTableroActualizado( Tablero tablero1)
         {
-            for (int fila = 0; fila < numfilas; fila++)
+            Tablero tablero2 = new Tablero(tablero1.NumFilas, tablero1.NumColumnas);
+            for (int fila = 0; fila < tablero1.NumFilas; fila++)
             {
-                for (int columna = 0; columna < numcol; columna++)
+                for (int columna = 0; columna < tablero1.NumColumnas; columna++)
                 {
                     int contadorCelulasVivas = 0;
                     if (!tablero1.TableroCelulas[fila, columna].TieneVida)
                     {
-                        contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, fila, columna, numfilas - 1, numcol - 1);
+                        contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, fila, columna);
                         getEstadoCelulaMuerta(contadorCelulasVivas, tablero2, fila, columna);
                     }
                     else
                     {
-                        contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, fila, columna, numfilas - 1, numcol - 1);
+                        contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, fila, columna);
                         getEstadoCelulaViva(contadorCelulasVivas, tablero2, fila, columna);
                     }
                 }
@@ -31,22 +32,22 @@ namespace JuegoDeLaVida
             tablero1 = tablero2;
             return tablero1;
         }        
-        private static int GetNumeroCelulasVivas(Tablero tablero1, int fila, int columna, int maxcolumna, int maxfila)
+        private static int GetNumeroCelulasVivas(Tablero tablero1, int fila, int columna)
         {
             int contadorCelulasVivas = 0;
             if (fila == 0 && columna == 0)
             {
                 contadorCelulasVivas = GetCelulasVivasEsquinaSuperiorIzquierda(tablero1, fila, columna, contadorCelulasVivas);
             }
-            else if (fila == 0 && columna == maxcolumna)
+            else if (fila == 0 && columna == tablero1.NumColumnas-1)
             {
                 contadorCelulasVivas = GetCelulasVivasEsquinaSuperiorDerecha(tablero1, fila, columna, contadorCelulasVivas);
             }
-            else if (fila == maxfila && columna == 0)
+            else if (fila == tablero1.NumFilas-1 && columna == 0)
             {
                 contadorCelulasVivas = GetCelulasVivasEsquinaInferiorIzquierda(tablero1, fila, columna, contadorCelulasVivas);
             }
-            else if (fila == maxfila && columna == maxcolumna)
+            else if (fila == tablero1.NumFilas-1 && columna == tablero1.NumColumnas-1)
             {
                 contadorCelulasVivas = GetCelulasVivasEsquinaInferiorDerecha(tablero1, fila, columna, contadorCelulasVivas);
             }
@@ -58,11 +59,11 @@ namespace JuegoDeLaVida
             {
                 contadorCelulasVivas = GetCelulasVivasPrimeraColumna(tablero1, fila, columna, contadorCelulasVivas);
             }
-            else if (columna == maxcolumna)
+            else if (columna == tablero1.NumColumnas-1)
             {
                 contadorCelulasVivas = GetCelulasVivasUltimaColumna(tablero1, fila, columna, contadorCelulasVivas);
             }
-            else if (fila == maxfila)
+            else if (fila == tablero1.NumFilas-1)
             {
                 contadorCelulasVivas = GetCelulasVivasUltimaFila(tablero1, fila, columna, contadorCelulasVivas);
             }

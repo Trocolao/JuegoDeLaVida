@@ -11,12 +11,13 @@ namespace JuegoDeLaVida
             int numerofilas=5;
             int numerocolumnas = 5;
             Tablero tablero1 = new Tablero(numerofilas, numerocolumnas);
-            RellenarTablero(tablero1);           
+            RellenarTablero(tablero1);
+            printarArray(tablero1);
             for (int ite = 0; ite < numiteraciones; ite++)
             {
-                printarArray(tablero1);
-                tablero1 = gestor.getTableroActualizado(tablero1.NumFilas, tablero1.NumColumnas, tablero1, new Tablero(tablero1.NumFilas, tablero1.NumColumnas));
+                tablero1 = gestor.getTableroActualizado(tablero1);
                 Console.WriteLine();
+                printarArray(tablero1);
             }
         }
         public static void printarArray(Tablero tablero)
