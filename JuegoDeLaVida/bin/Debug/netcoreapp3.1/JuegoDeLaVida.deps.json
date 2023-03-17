@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "JuegoDeLaVida/1.0.0": {
+        "dependencies": {
+          "JuegoDeLaVida.LogicaDeNegocio": "1.0.0"
+        },
         "runtime": {
           "JuegoDeLaVida.dll": {}
+        }
+      },
+      "JuegoDeLaVida.LogicaDeNegocio/1.0.0": {
+        "runtime": {
+          "JuegoDeLaVida.LogicaDeNegocio.dll": {}
         }
       }
     }
   },
   "libraries": {
     "JuegoDeLaVida/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JuegoDeLaVida.LogicaDeNegocio/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

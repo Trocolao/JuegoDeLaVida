@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JuegoDeLaVida
+namespace JuegoDeLaVida.LogicaDeNegocio
 {
-    internal class Tablero
+    public class Tablero
     {
         Celula[,] _tablero;
         int _filas;

@@ -1,0 +1,125 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.WindowsForms\\JuegoDeLaVida.WindowsForms.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.LogicaDeNegocio\\JuegoDeLaVida.LogicaDeNegocio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.LogicaDeNegocio\\JuegoDeLaVida.LogicaDeNegocio.csproj",
+        "projectName": "JuegoDeLaVida.LogicaDeNegocio",
+        "projectPath": "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.LogicaDeNegocio\\JuegoDeLaVida.LogicaDeNegocio.csproj",
+        "packagesPath": "C:\\Users\\cmunozj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.LogicaDeNegocio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cmunozj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.WindowsForms\\JuegoDeLaVida.WindowsForms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.WindowsForms\\JuegoDeLaVida.WindowsForms.csproj",
+        "projectName": "JuegoDeLaVida.WindowsForms",
+        "projectPath": "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.WindowsForms\\JuegoDeLaVida.WindowsForms.csproj",
+        "packagesPath": "C:\\Users\\cmunozj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.WindowsForms\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cmunozj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.LogicaDeNegocio\\JuegoDeLaVida.LogicaDeNegocio.csproj": {
+                "projectPath": "C:\\Users\\cmunozj\\source\\repos\\JuegoDeLaVida\\JuegoDeLaVida.LogicaDeNegocio\\JuegoDeLaVida.LogicaDeNegocio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\bin\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.deps.json
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\bin\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.dll
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\bin\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.pdb
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\obj\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.csproj.AssemblyReference.cache
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\obj\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\obj\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.AssemblyInfoInputs.cache
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\obj\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.AssemblyInfo.cs
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\obj\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\obj\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.dll
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida.LogicaDeNegocio\obj\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.pdb

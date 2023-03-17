@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
-namespace JuegoDeLaVida
+namespace JuegoDeLaVida.LogicaDeNegocio
 {
-    internal class Gestor
+    public class Gestor
     {
         public Gestor()
         {

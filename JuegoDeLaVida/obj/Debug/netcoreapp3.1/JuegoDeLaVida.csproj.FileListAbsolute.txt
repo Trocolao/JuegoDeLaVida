@@ -12,3 +12,6 @@ C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.
 C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.dll
 C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.pdb
 C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.genruntimeconfig.cache
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.dll
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\bin\Debug\netcoreapp3.1\JuegoDeLaVida.LogicaDeNegocio.pdb
+C:\Users\cmunozj\source\repos\JuegoDeLaVida\JuegoDeLaVida\obj\Debug\netcoreapp3.1\JuegoDeLaVida.csproj.CopyComplete

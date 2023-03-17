@@ -1,4 +1,5 @@
 ﻿using System;
+using JuegoDeLaVida.LogicaDeNegocio;
 
 namespace JuegoDeLaVida
 {

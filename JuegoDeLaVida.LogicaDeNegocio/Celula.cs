@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JuegoDeLaVida
+namespace JuegoDeLaVida.LogicaDeNegocio
 {
-    internal class Celula
+    public class Celula
     {
         public Celula(Boolean tieneVida)
         {
