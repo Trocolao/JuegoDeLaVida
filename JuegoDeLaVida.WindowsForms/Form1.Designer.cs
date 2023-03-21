@@ -57,9 +57,7 @@ namespace JuegoDeLaVida.WindowsForms
             textBox13 = new System.Windows.Forms.TextBox();
             textBox03 = new System.Windows.Forms.TextBox();
             button1 = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
             NuevoTablero = new System.Windows.Forms.Button();
-            Guardar = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // label1
@@ -256,19 +254,9 @@ namespace JuegoDeLaVida.WindowsForms
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.Location = new System.Drawing.Point(423, 131);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(138, 23);
-            button2.TabIndex = 29;
-            button2.Text = "Salir";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // NuevoTablero
             // 
-            NuevoTablero.Location = new System.Drawing.Point(425, 179);
+            NuevoTablero.Location = new System.Drawing.Point(423, 132);
             NuevoTablero.Name = "NuevoTablero";
             NuevoTablero.Size = new System.Drawing.Size(136, 23);
             NuevoTablero.TabIndex = 30;
@@ -276,24 +264,12 @@ namespace JuegoDeLaVida.WindowsForms
             NuevoTablero.UseVisualStyleBackColor = true;
             NuevoTablero.Click += NuevoTablero_Click;
             // 
-            // Guardar
-            // 
-            Guardar.Location = new System.Drawing.Point(425, 222);
-            Guardar.Name = "Guardar";
-            Guardar.Size = new System.Drawing.Size(136, 23);
-            Guardar.TabIndex = 31;
-            Guardar.Text = "Guardar Datos";
-            Guardar.UseVisualStyleBackColor = true;
-            Guardar.Click += Guardar_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(712, 342);
-            Controls.Add(Guardar);
             Controls.Add(NuevoTablero);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox03);
             Controls.Add(textBox13);
@@ -357,8 +333,6 @@ namespace JuegoDeLaVida.WindowsForms
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox03;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button NuevoTablero;
-        private System.Windows.Forms.Button Guardar;
     }
 }

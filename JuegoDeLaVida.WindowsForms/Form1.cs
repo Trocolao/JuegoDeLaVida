@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -16,16 +17,14 @@ namespace JuegoDeLaVida.WindowsForms
     {
         Tablero tablero1 = new Tablero(5, 5);
         Gestor gestor1 = new Gestor();
+        int contadorDeIteraciones = 0;
         public Form1()
         {
             InitializeComponent();
+            MessageBox.Show("Introduce los datos dentro del siguiente tablero, utiliza el * para las células vivas y nada para las muertas, si se introduce algún dato inválido este será sustituido por una célula muerta");
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void introducirDatos(Tablero tablero1)
         {
-            Application.Exit();
-        }
-        private void Guardar_Click(object sender, EventArgs e)
-        {            
             if (textBox00.Text == "*")
             {
                 tablero1.TableroCelulas[0, 0].TieneVida = true;
@@ -36,8 +35,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=0 y columna=0 se ha introducido un dato inválido");
+                textBox00.Clear();
             }
             if (textBox01.Text == "*")
             {
@@ -49,8 +48,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=0 y columna=1 se ha introducido un dato inválido");
+                textBox01.Clear();
             }
             if (textBox02.Text == "*")
             {
@@ -62,8 +61,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=0 y columna=2 se ha introducido un dato inválido");
+                textBox02.Clear();
             }
             if (textBox03.Text == "*")
             {
@@ -75,8 +74,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=0 y columna=3 se ha introducido un dato inválido");
+                textBox03.Clear();
             }
             if (textBox04.Text == "*")
             {
@@ -88,8 +87,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=0 y columna=4 se ha introducido un dato inválido");
+                textBox04.Clear();
             }
             if (textBox10.Text == "*")
             {
@@ -101,8 +100,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=1 y columna=0 se ha introducido un dato inválido");
+                textBox10.Clear();
             }
             if (textBox11.Text == "*")
             {
@@ -114,8 +113,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=1 y columna=1 se ha introducido un dato inválido");
+                textBox11.Clear();
             }
             if (textBox12.Text == "*")
             {
@@ -127,8 +126,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=1 y columna=2 se ha introducido un dato inválido");
+                textBox12.Clear();
             }
             if (textBox13.Text == "*")
             {
@@ -140,8 +139,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=1 y columna=3 se ha introducido un dato inválido");
+                textBox13.Clear();
             }
             if (textBox14.Text == "*")
             {
@@ -153,8 +152,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=1 y columna=4 se ha introducido un dato inválido");
+                textBox14.Clear();
             }
             if (textBox20.Text == "*")
             {
@@ -166,8 +165,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=2 y columna=0 se ha introducido un dato inválido");
+                textBox20.Clear();
             }
             if (textBox21.Text == "*")
             {
@@ -179,8 +178,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=2 y columna=1 se ha introducido un dato inválido");
+                textBox21.Clear();
             }
             if (textBox22.Text == "*")
             {
@@ -192,8 +191,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=2 y columna=2 se ha introducido un dato inválido");
+                textBox22.Clear();
             }
             if (textBox23.Text == "*")
             {
@@ -205,8 +204,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=2 y columna=3 se ha introducido un dato inválido");
+                textBox23.Clear();
             }
             if (textBox24.Text == "*")
             {
@@ -218,8 +217,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=2 y columna=4 se ha introducido un dato inválido");
+                textBox24.Clear();
             }
             if (textBox30.Text == "*")
             {
@@ -231,8 +230,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=3 y columna=0 se ha introducido un dato inválido");
+                textBox30.Clear();
             }
             if (textBox31.Text == "*")
             {
@@ -244,8 +243,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=3 y columna=1 se ha introducido un dato inválido");
+                textBox31.Clear();
             }
             if (textBox32.Text == "*")
             {
@@ -257,8 +256,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=3 y columna=2 se ha introducido un dato inválido");
+                textBox32.Clear();
             }
             if (textBox33.Text == "*")
             {
@@ -270,8 +269,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=3 y columna=3 se ha introducido un dato inválido");
+                textBox33.Clear();
             }
             if (textBox34.Text == "*")
             {
@@ -283,8 +282,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=3 y columna=4 se ha introducido un dato inválido");
+                textBox34.Clear();
             }
             if (textBox40.Text == "*")
             {
@@ -296,8 +295,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=4 y columna=0 se ha introducido un dato inválido");
+                textBox40.Clear();
             }
             if (textBox41.Text == "*")
             {
@@ -309,8 +308,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=4 y columna=1 se ha introducido un dato inválido");
+                textBox41.Clear();
             }
             if (textBox42.Text == "*")
             {
@@ -322,8 +321,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=4 y columna=2 se ha introducido un dato inválido");
+                textBox42.Clear();
             }
             if (textBox43.Text == "*")
             {
@@ -335,8 +334,8 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=4 y columna=3 se ha introducido un dato inválido");
+                textBox43.Clear();
             }
             if (textBox44.Text == "*")
             {
@@ -348,13 +347,14 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                MessageBox.Show("No se han guardado los datos correctamente");
-                Application.Exit();
+                MessageBox.Show("En la celda con fila=4 y columna=4 se ha introducido un dato inválido");
+                textBox44.Clear();
             }
-                MessageBox.Show("Se han guardado los datos correctamente");          
+            MessageBox.Show("Los datos se han introducido correctamente");
         }
         private void NuevoTablero_Click(object sender, EventArgs e)
         {
+            contadorDeIteraciones=0;
             textBox00.Clear();
             textBox01.Clear();
             textBox02.Clear();
@@ -380,10 +380,64 @@ namespace JuegoDeLaVida.WindowsForms
             textBox42.Clear();
             textBox43.Clear();
             textBox44.Clear();
+            textBox00.Enabled = true;
+            textBox01.Enabled = true;
+            textBox02.Enabled = true;
+            textBox03.Enabled = true;
+            textBox04.Enabled = true;
+            textBox10.Enabled = true;
+            textBox11.Enabled = true;
+            textBox12.Enabled = true;
+            textBox13.Enabled = true;
+            textBox14.Enabled = true;
+            textBox20.Enabled = true;
+            textBox21.Enabled = true;
+            textBox22.Enabled = true;
+            textBox23.Enabled = true;
+            textBox24.Enabled = true;
+            textBox30.Enabled = true;
+            textBox31.Enabled = true;
+            textBox32.Enabled = true;
+            textBox33.Enabled = true;
+            textBox34.Enabled = true;
+            textBox40.Enabled = true;
+            textBox41.Enabled = true;
+            textBox42.Enabled = true;
+            textBox43.Enabled = true;
+            textBox44.Enabled = true;
             MessageBox.Show("Introduzca los datos del nuevo tablero");
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            if (contadorDeIteraciones == 0)
+            {
+                introducirDatos(tablero1);
+            }
+            textBox00.Enabled = false;
+            textBox01.Enabled = false;
+            textBox02.Enabled = false;
+            textBox03.Enabled = false;
+            textBox04.Enabled = false;
+            textBox10.Enabled = false;
+            textBox11.Enabled = false;
+            textBox12.Enabled = false;
+            textBox13.Enabled = false;
+            textBox14.Enabled = false;
+            textBox20.Enabled = false;
+            textBox21.Enabled = false;
+            textBox22.Enabled = false;
+            textBox23.Enabled = false;
+            textBox24.Enabled = false;
+            textBox30.Enabled = false;
+            textBox31.Enabled = false;
+            textBox32.Enabled = false;
+            textBox33.Enabled = false;
+            textBox34.Enabled = false;
+            textBox40.Enabled = false;
+            textBox41.Enabled = false;
+            textBox42.Enabled = false;
+            textBox43.Enabled = false;
+            textBox44.Enabled = false;
             tablero1 = gestor1.GetTableroActualizado(tablero1);
             if (tablero1.TableroCelulas[0, 0].TieneVida)
             {
@@ -585,6 +639,8 @@ namespace JuegoDeLaVida.WindowsForms
             {
                 textBox44.Text = "";
             }
+            contadorDeIteraciones++;
+            MessageBox.Show("Iteracion número: " + contadorDeIteraciones + " ");
         }
     }
 }
