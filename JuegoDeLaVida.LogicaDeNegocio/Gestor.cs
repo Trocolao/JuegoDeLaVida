@@ -12,201 +12,202 @@ namespace JuegoDeLaVida.LogicaDeNegocio
         }
         public Tablero GetTableroActualizado(Tablero tablero1)
         {
+            Posicion posicion = new Posicion();
             Tablero tablero2 = new Tablero(tablero1.NumFilas, tablero1.NumColumnas);
-            for (int fila = 0; fila < tablero1.NumFilas; fila++)
+            for (posicion.Fila = 0; posicion.Fila < tablero1.NumFilas; posicion.Fila++)
             {
-                for (int columna = 0; columna < tablero1.NumColumnas; columna++)
+                for (posicion.Columna = 0; posicion.Columna < tablero1.NumColumnas; posicion.Columna++)
                 {
-                    int contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, fila, columna);
-                    if (!tablero1.TableroCelulas[fila, columna].TieneVida)
+                    int contadorCelulasVivas = GetNumeroCelulasVivas(tablero1, posicion);
+                    if (!tablero1.TableroCelulas[posicion.Fila, posicion.Columna].TieneVida)
                     {                        
-                        GetEstadoCelulaMuerta(contadorCelulasVivas, tablero2, fila, columna);
+                        GetEstadoCelulaMuerta(contadorCelulasVivas, tablero2, posicion);
                     }
                     else
                     {                        
-                        GetEstadoCelulaViva(contadorCelulasVivas, tablero2, fila, columna);
+                        GetEstadoCelulaViva(contadorCelulasVivas, tablero2, posicion);
                     }
                 }
             }
             return tablero2;
         }
-        private static int GetNumeroCelulasVivas(Tablero tablero1, int fila, int columna)
+        private static int GetNumeroCelulasVivas(Tablero tablero1, Posicion posicion)
         {   
-            if (fila == 0 && columna == 0)
+            if (posicion.Fila == 0 && posicion.Columna == 0)
             {
-                return GetCelulasVivasEsquinaSuperiorIzquierda(tablero1, fila, columna);
+                return GetCelulasVivasEsquinaSuperiorIzquierda(tablero1, posicion);
             }
-            else if (fila == 0 && columna == tablero1.NumColumnas - 1)
+            else if (posicion.Fila == 0 && posicion.Columna == tablero1.NumColumnas - 1)
             {
-                return GetCelulasVivasEsquinaSuperiorDerecha(tablero1, fila, columna);
+                return GetCelulasVivasEsquinaSuperiorDerecha(tablero1, posicion);
             }
-            else if (fila == tablero1.NumFilas - 1 && columna == 0)
+            else if (posicion.Fila == tablero1.NumFilas - 1 &&  posicion.Columna == 0)
             {
-                return GetCelulasVivasEsquinaInferiorIzquierda(tablero1, fila, columna);
+                return GetCelulasVivasEsquinaInferiorIzquierda(tablero1, posicion);
             }
-            else if (fila == tablero1.NumFilas - 1 && columna == tablero1.NumColumnas - 1)
+            else if (posicion.Fila == tablero1.NumFilas - 1 && posicion.Columna == tablero1.NumColumnas - 1)
             {
-                return GetCelulasVivasEsquinaInferiorDerecha(tablero1, fila, columna);
+                return GetCelulasVivasEsquinaInferiorDerecha(tablero1, posicion);
             }
-            else if (fila == 0)
+            else if (posicion.Fila == 0)
             {
-                return GetCelulasVivasPrimeraFila(tablero1, fila, columna);
+                return GetCelulasVivasPrimeraFila(tablero1, posicion);
             }
-            else if (columna == 0)
+            else if (posicion.Columna == 0)
             {
-                return GetCelulasVivasPrimeraColumna(tablero1, fila, columna);
+                return GetCelulasVivasPrimeraColumna(tablero1, posicion);
             }
-            else if (columna == tablero1.NumColumnas - 1)
+            else if (posicion.Columna == tablero1.NumColumnas - 1)
             {
-                return GetCelulasVivasUltimaColumna(tablero1, fila, columna);
+                return GetCelulasVivasUltimaColumna(tablero1, posicion);
             }
-            else if (fila == tablero1.NumFilas - 1)
+            else if (posicion.Fila == tablero1.NumFilas - 1)
             {
-                return GetCelulasVivasUltimaFila(tablero1, fila, columna);
+                return GetCelulasVivasUltimaFila(tablero1, posicion);
             }
             else
             {
-                return GetCelulasVivasSectorInterior(tablero1, fila, columna);
+                return GetCelulasVivasSectorInterior(tablero1, posicion);
             }
             return 0;
         }
-        private static int GetCelulasVivasSectorInterior(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasSectorInterior(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila - 1; filaVecina < fila + 2; filaVecina++)
+            for (int filaVecina = posicion.Fila - 1; filaVecina < posicion.Fila + 2; filaVecina++)
             {
-                for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
+                for (int columnaVecina = posicion.Columna - 1; columnaVecina < posicion.Columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasUltimaFila(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasUltimaFila(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila - 1; filaVecina < fila + 1; filaVecina++)
+            for (int filaVecina = posicion.Fila - 1; filaVecina < posicion.Fila + 1; filaVecina++)
             {
-                for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
+                for (int columnaVecina = posicion.Columna - 1; columnaVecina < posicion.Columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasUltimaColumna(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasUltimaColumna(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila - 1; filaVecina < fila + 2; filaVecina++)
+            for (int filaVecina = posicion.Fila - 1; filaVecina < posicion.Fila + 2; filaVecina++)
             {
-                for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
+                for (int columnaVecina = posicion.Columna - 1; columnaVecina < posicion.Columna + 1; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasPrimeraColumna(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasPrimeraColumna(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila - 1; filaVecina < fila + 2; filaVecina++)
+            for (int filaVecina = posicion.Fila - 1; filaVecina < posicion.Fila + 2; filaVecina++)
             {
-                for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
+                for (int columnaVecina = posicion.Columna; columnaVecina < posicion.Columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasPrimeraFila(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasPrimeraFila(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila; filaVecina < fila + 2; filaVecina++)
+            for (int filaVecina = posicion.Fila; filaVecina < posicion.Fila + 2; filaVecina++)
             {
-                for (int columnaVecina = columna - 1; columnaVecina < columna + 2; columnaVecina++)
+                for (int columnaVecina = posicion.Columna - 1; columnaVecina < posicion.Columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasEsquinaInferiorDerecha(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasEsquinaInferiorDerecha(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila - 1; filaVecina < fila + 1; filaVecina++)
+            for (int filaVecina = posicion.Fila - 1; filaVecina < posicion.Fila + 1; filaVecina++)
             {
-                for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
+                for (int columnaVecina = posicion.Columna - 1; columnaVecina < posicion.Columna + 1; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasEsquinaInferiorIzquierda(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasEsquinaInferiorIzquierda(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila - 1; filaVecina < fila + 1; filaVecina++)
+            for (int filaVecina = posicion.Fila - 1; filaVecina < posicion.Fila + 1; filaVecina++)
             {
-                for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
+                for (int columnaVecina = posicion.Columna; columnaVecina < posicion.Columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasEsquinaSuperiorDerecha(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasEsquinaSuperiorDerecha(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila; filaVecina < fila + 2; filaVecina++)
+            for (int filaVecina = posicion.Fila; filaVecina < posicion.Fila + 2; filaVecina++)
             {
-                for (int columnaVecina = columna - 1; columnaVecina < columna + 1; columnaVecina++)
+                for (int columnaVecina = posicion.Columna - 1; columnaVecina < posicion.Columna + 1; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private static int GetCelulasVivasEsquinaSuperiorIzquierda(Tablero tablero1, int fila, int columna)
+        private static int GetCelulasVivasEsquinaSuperiorIzquierda(Tablero tablero1, Posicion posicion)
         {
             int contadorCelulasVivas = 0;
-            for (int filaVecina = fila; filaVecina < fila + 2; filaVecina++)
+            for (int filaVecina = posicion.Fila; filaVecina < posicion.Fila + 2; filaVecina++)
             {
-                for (int columnaVecina = columna; columnaVecina < columna + 2; columnaVecina++)
+                for (int columnaVecina = posicion.Columna; columnaVecina < posicion.Columna + 2; columnaVecina++)
                 {
-                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, fila, columna);
+                    contadorCelulasVivas = GetContadorCelulasVivas(tablero1, contadorCelulasVivas, filaVecina, columnaVecina, posicion);
                 }
             }
             return contadorCelulasVivas;
         }
-        private void GetEstadoCelulaMuerta(int contadorCelulasVivas, Tablero tablero2, int fila, int columna)
+        private void GetEstadoCelulaMuerta(int contadorCelulasVivas, Tablero tablero2, Posicion posicion)
         {
             if (contadorCelulasVivas == 3)
             {
-                tablero2.TableroCelulas[fila, columna].TieneVida = true;
+                tablero2.TableroCelulas[posicion.Fila, posicion.Columna].TieneVida = true;
             }
             else
             {
-                tablero2.TableroCelulas[fila, columna].TieneVida = false;
+                tablero2.TableroCelulas[posicion.Fila, posicion.Columna].TieneVida = false;
             }
         }
-        private static void GetEstadoCelulaViva(int contadorCelulasVivas, Tablero tablero2, int fila, int columna)
+        private static void GetEstadoCelulaViva(int contadorCelulasVivas, Tablero tablero2, Posicion posicion)
         {
             if (contadorCelulasVivas < 2)
             {
-                tablero2.TableroCelulas[fila, columna].TieneVida = false;
+                tablero2.TableroCelulas[posicion.Fila, posicion.Columna].TieneVida = false;
             }
             else if (contadorCelulasVivas > 3)
             {
-                tablero2.TableroCelulas[fila, columna].TieneVida = false;
+                tablero2.TableroCelulas[posicion.Fila, posicion.Columna].TieneVida = false;
             }
             else
             {
-                tablero2.TableroCelulas[fila, columna].TieneVida = true;
+                tablero2.TableroCelulas[posicion.Fila, posicion.Columna].TieneVida = true;
             }
         }
-        private static int GetContadorCelulasVivas(Tablero tablero1, int contadorCelulasVivas, int filaVecina, int columnaVecina, int fila, int columna)
+        private static int GetContadorCelulasVivas(Tablero tablero1, int contadorCelulasVivas, int filaVecina, int columnaVecina, Posicion posicion)
         {
-            if (tablero1.TableroCelulas[filaVecina, columnaVecina].TieneVida && tablero1.TableroCelulas[filaVecina, columnaVecina] != tablero1.TableroCelulas[fila, columna])
+            if (tablero1.TableroCelulas[filaVecina, columnaVecina].TieneVida && tablero1.TableroCelulas[filaVecina, columnaVecina] != tablero1.TableroCelulas[posicion.Fila, posicion.Columna])
             {
                 contadorCelulasVivas++;
             }
