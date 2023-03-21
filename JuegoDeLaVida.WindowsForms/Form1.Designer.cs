@@ -84,7 +84,6 @@ namespace JuegoDeLaVida.WindowsForms
             textBox10.Name = "textBox10";
             textBox10.Size = new System.Drawing.Size(27, 23);
             textBox10.TabIndex = 4;
-            textBox10.TextChanged += textBox10_TextChanged;
             // 
             // textBox20
             // 
@@ -291,7 +290,7 @@ namespace JuegoDeLaVida.WindowsForms
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(712, 342);
             Controls.Add(Guardar);
             Controls.Add(NuevoTablero);
             Controls.Add(button2);

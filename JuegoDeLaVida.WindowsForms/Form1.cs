@@ -20,222 +20,339 @@ namespace JuegoDeLaVida.WindowsForms
         {
             InitializeComponent();
         }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void Guardar_Click(object sender, EventArgs e)
-        {
+        {            
             if (textBox00.Text == "*")
             {
                 tablero1.TableroCelulas[0, 0].TieneVida = true;
             }
-            else
+            else if (textBox00.Text == "")
             {
                 tablero1.TableroCelulas[0, 0].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox01.Text == "*")
             {
                 tablero1.TableroCelulas[0, 1].TieneVida = true;
             }
-            else
+            else if (textBox01.Text == "")
             {
                 tablero1.TableroCelulas[0, 1].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox02.Text == "*")
             {
                 tablero1.TableroCelulas[0, 2].TieneVida = true;
             }
-            else
+            else if (textBox02.Text == "")
             {
                 tablero1.TableroCelulas[0, 2].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox03.Text == "*")
             {
                 tablero1.TableroCelulas[0, 3].TieneVida = true;
             }
-            else
+            else if (textBox03.Text == "")
             {
                 tablero1.TableroCelulas[0, 3].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox04.Text == "*")
             {
                 tablero1.TableroCelulas[0, 4].TieneVida = true;
             }
-            else
+            else if (textBox04.Text == "")
             {
                 tablero1.TableroCelulas[0, 4].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox10.Text == "*")
             {
                 tablero1.TableroCelulas[1, 0].TieneVida = true;
             }
-            else
+            else if (textBox10.Text == "")
             {
                 tablero1.TableroCelulas[1, 0].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox11.Text == "*")
             {
                 tablero1.TableroCelulas[1, 1].TieneVida = true;
             }
-            else
+            else if (textBox11.Text == "")
             {
                 tablero1.TableroCelulas[1, 1].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox12.Text == "*")
             {
                 tablero1.TableroCelulas[1, 2].TieneVida = true;
             }
-            else
+            else if (textBox12.Text == "")
             {
                 tablero1.TableroCelulas[1, 2].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox13.Text == "*")
             {
                 tablero1.TableroCelulas[1, 3].TieneVida = true;
             }
-            else
+            else if (textBox13.Text == "")
             {
                 tablero1.TableroCelulas[1, 3].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox14.Text == "*")
             {
                 tablero1.TableroCelulas[1, 4].TieneVida = true;
             }
-            else
+            else if (textBox14.Text == "")
             {
                 tablero1.TableroCelulas[1, 4].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox20.Text == "*")
             {
                 tablero1.TableroCelulas[2, 0].TieneVida = true;
             }
-            else
+            else if (textBox20.Text == "")
             {
                 tablero1.TableroCelulas[2, 0].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox21.Text == "*")
             {
                 tablero1.TableroCelulas[2, 1].TieneVida = true;
             }
-            else
+            else if (textBox21.Text == "")
             {
                 tablero1.TableroCelulas[2, 1].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox22.Text == "*")
             {
                 tablero1.TableroCelulas[2, 2].TieneVida = true;
             }
-            else
+            else if (textBox22.Text == "")
             {
                 tablero1.TableroCelulas[2, 2].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox23.Text == "*")
             {
                 tablero1.TableroCelulas[2, 3].TieneVida = true;
             }
-            else
+            else if (textBox23.Text == "")
             {
                 tablero1.TableroCelulas[2, 3].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox24.Text == "*")
             {
                 tablero1.TableroCelulas[2, 4].TieneVida = true;
             }
-            else
+            else if (textBox24.Text == "")
             {
                 tablero1.TableroCelulas[2, 4].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox30.Text == "*")
             {
                 tablero1.TableroCelulas[3, 0].TieneVida = true;
             }
-            else
+            else if (textBox30.Text == "")
             {
                 tablero1.TableroCelulas[3, 0].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox31.Text == "*")
             {
                 tablero1.TableroCelulas[3, 1].TieneVida = true;
             }
-            else
+            else if (textBox31.Text == "")
             {
                 tablero1.TableroCelulas[3, 1].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox32.Text == "*")
             {
                 tablero1.TableroCelulas[3, 2].TieneVida = true;
             }
-            else
+            else if (textBox32.Text == "")
             {
                 tablero1.TableroCelulas[3, 2].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox33.Text == "*")
             {
                 tablero1.TableroCelulas[3, 3].TieneVida = true;
             }
-            else
+            else if (textBox33.Text == "")
             {
                 tablero1.TableroCelulas[3, 3].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox34.Text == "*")
             {
                 tablero1.TableroCelulas[3, 4].TieneVida = true;
             }
-            else
+            else if (textBox34.Text == "")
             {
                 tablero1.TableroCelulas[3, 4].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox40.Text == "*")
             {
                 tablero1.TableroCelulas[4, 0].TieneVida = true;
             }
-            else
+            else if (textBox40.Text == "")
             {
                 tablero1.TableroCelulas[4, 0].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox41.Text == "*")
             {
                 tablero1.TableroCelulas[4, 1].TieneVida = true;
             }
-            else
+            else if (textBox41.Text == "")
             {
                 tablero1.TableroCelulas[4, 1].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox42.Text == "*")
             {
                 tablero1.TableroCelulas[4, 2].TieneVida = true;
             }
-            else
+            else if (textBox42.Text == "")
             {
                 tablero1.TableroCelulas[4, 2].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox43.Text == "*")
             {
                 tablero1.TableroCelulas[4, 3].TieneVida = true;
             }
-            else
+            else if (textBox43.Text == "")
             {
                 tablero1.TableroCelulas[4, 3].TieneVida = false;
+            }
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
             }
             if (textBox44.Text == "*")
             {
                 tablero1.TableroCelulas[4, 4].TieneVida = true;
             }
-            else
+            else if (textBox44.Text == "")
             {
                 tablero1.TableroCelulas[4, 4].TieneVida = false;
             }
-            MessageBox.Show("Se han guardado los datos correctamente");
+            else
+            {
+                MessageBox.Show("No se han guardado los datos correctamente");
+                Application.Exit();
+            }
+                MessageBox.Show("Se han guardado los datos correctamente");          
         }
-
         private void NuevoTablero_Click(object sender, EventArgs e)
         {
             textBox00.Clear();
@@ -265,7 +382,6 @@ namespace JuegoDeLaVida.WindowsForms
             textBox44.Clear();
             MessageBox.Show("Introduzca los datos del nuevo tablero");
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             tablero1 = gestor1.GetTableroActualizado(tablero1);
@@ -275,7 +391,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox00.Text = " ";
+                textBox00.Text = "";
             }
             if (tablero1.TableroCelulas[0, 1].TieneVida)
             {
@@ -283,7 +399,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox01.Text = " ";
+                textBox01.Text = "";
             }
             if (tablero1.TableroCelulas[0, 2].TieneVida)
             {
@@ -291,7 +407,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox02.Text = " ";
+                textBox02.Text = "";
             }
             if (tablero1.TableroCelulas[0, 3].TieneVida)
             {
@@ -299,7 +415,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox03.Text = " ";
+                textBox03.Text = "";
             }
             if (tablero1.TableroCelulas[0, 4].TieneVida)
             {
@@ -307,7 +423,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox04.Text = " ";
+                textBox04.Text = "";
             }
             if (tablero1.TableroCelulas[1, 0].TieneVida)
             {
@@ -315,7 +431,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox10.Text = " ";
+                textBox10.Text = "";
             }
             if (tablero1.TableroCelulas[1, 1].TieneVida)
             {
@@ -323,7 +439,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox11.Text = " ";
+                textBox11.Text = "";
             }
             if (tablero1.TableroCelulas[1, 2].TieneVida)
             {
@@ -331,7 +447,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox12.Text = " ";
+                textBox12.Text = "";
             }
             if (tablero1.TableroCelulas[1, 3].TieneVida)
             {
@@ -339,7 +455,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox13.Text = " ";
+                textBox13.Text = "";
             }
             if (tablero1.TableroCelulas[1, 4].TieneVida)
             {
@@ -347,7 +463,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox14.Text = " ";
+                textBox14.Text = "";
             }
             if (tablero1.TableroCelulas[2, 0].TieneVida)
             {
@@ -355,7 +471,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox20.Text = " ";
+                textBox20.Text = "";
             }
             if (tablero1.TableroCelulas[2, 1].TieneVida)
             {
@@ -363,7 +479,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox21.Text = " ";
+                textBox21.Text = "";
             }
             if (tablero1.TableroCelulas[2, 2].TieneVida)
             {
@@ -371,7 +487,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox22.Text = " ";
+                textBox22.Text = "";
             }
             if (tablero1.TableroCelulas[2, 3].TieneVida)
             {
@@ -379,7 +495,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox23.Text = " ";
+                textBox23.Text = "";
             }
             if (tablero1.TableroCelulas[2, 4].TieneVida)
             {
@@ -387,7 +503,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox24.Text = " ";
+                textBox24.Text = "";
             }
             if (tablero1.TableroCelulas[3, 0].TieneVida)
             {
@@ -395,7 +511,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox30.Text = " ";
+                textBox30.Text = "";
             }
             if (tablero1.TableroCelulas[3, 1].TieneVida)
             {
@@ -403,7 +519,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox31.Text = " ";
+                textBox31.Text = "";
             }
             if (tablero1.TableroCelulas[3, 2].TieneVida)
             {
@@ -411,7 +527,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox32.Text = " ";
+                textBox32.Text = "";
             }
             if (tablero1.TableroCelulas[3, 3].TieneVida)
             {
@@ -419,7 +535,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox33.Text = " ";
+                textBox33.Text = "";
             }
             if (tablero1.TableroCelulas[3, 4].TieneVida)
             {
@@ -427,7 +543,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox34.Text = " ";
+                textBox34.Text = "";
             }
             if (tablero1.TableroCelulas[4, 0].TieneVida)
             {
@@ -435,7 +551,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox40.Text = " ";
+                textBox40.Text = "";
             }
             if (tablero1.TableroCelulas[4, 1].TieneVida)
             {
@@ -443,7 +559,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox41.Text = " ";
+                textBox41.Text = "";
             }
             if (tablero1.TableroCelulas[4, 2].TieneVida)
             {
@@ -451,7 +567,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox42.Text = " ";
+                textBox42.Text = "";
             }
             if (tablero1.TableroCelulas[4, 3].TieneVida)
             {
@@ -459,7 +575,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox43.Text = " ";
+                textBox43.Text = "";
             }
             if (tablero1.TableroCelulas[4, 4].TieneVida)
             {
@@ -467,7 +583,7 @@ namespace JuegoDeLaVida.WindowsForms
             }
             else
             {
-                textBox44.Text = " ";
+                textBox44.Text = "";
             }
         }
     }
