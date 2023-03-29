@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\PersonaController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JuegoDeLaVida.LogicaDeNegocio\JuegoDeLaVida.LogicaDeNegocio.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -7,9 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuegoDeLaVida", "JuegoDeLaV
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{FA565171-38EF-408F-89D2-E37F194F975F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoDeLaVida.LogicaDeNegocio", "JuegoDeLaVida.LogicaDeNegocio\JuegoDeLaVida.LogicaDeNegocio.csproj", "{62BC2F5B-2FD4-4B95-AA01-BFCCA096D225}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuegoDeLaVida.LogicaDeNegocio", "JuegoDeLaVida.LogicaDeNegocio\JuegoDeLaVida.LogicaDeNegocio.csproj", "{62BC2F5B-2FD4-4B95-AA01-BFCCA096D225}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoDeLaVida.WindowsForms", "JuegoDeLaVida.WindowsForms\JuegoDeLaVida.WindowsForms.csproj", "{98AAD272-8073-4539-B7C3-5E40EFBF6998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuegoDeLaVida.WindowsForms", "JuegoDeLaVida.WindowsForms\JuegoDeLaVida.WindowsForms.csproj", "{98AAD272-8073-4539-B7C3-5E40EFBF6998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoDeLaVida.MVC", "JuegoDeLaVida.MVC\JuegoDeLaVida.MVC.csproj", "{9924FD93-DAE2-4EBE-86D0-9015B726E35F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62BC2F5B-2FD4-4B95-AA01-BFCCA096D225} = {62BC2F5B-2FD4-4B95-AA01-BFCCA096D225}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +34,10 @@ Global
 		{98AAD272-8073-4539-B7C3-5E40EFBF6998}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98AAD272-8073-4539-B7C3-5E40EFBF6998}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98AAD272-8073-4539-B7C3-5E40EFBF6998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9924FD93-DAE2-4EBE-86D0-9015B726E35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9924FD93-DAE2-4EBE-86D0-9015B726E35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9924FD93-DAE2-4EBE-86D0-9015B726E35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9924FD93-DAE2-4EBE-86D0-9015B726E35F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

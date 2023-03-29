@@ -78,40 +78,40 @@ namespace JuegoDeLaVida.WindowsForms
         private void NuevoTablero_Click(object sender, EventArgs e)
         {
             contadorDeIteraciones = 0;
-            ResetearCela(textBox00);
-            ResetearCela(textBox01);
-            ResetearCela(textBox02);
-            ResetearCela(textBox03);
-            ResetearCela(textBox04);
+            ResetearCelda(textBox00);
+            ResetearCelda(textBox01);
+            ResetearCelda(textBox02);
+            ResetearCelda(textBox03);
+            ResetearCelda(textBox04);
 
-            ResetearCela(textBox10);
-            ResetearCela(textBox11);
-            ResetearCela(textBox12);
-            ResetearCela(textBox13);
-            ResetearCela(textBox14);
+            ResetearCelda(textBox10);
+            ResetearCelda(textBox11);
+            ResetearCelda(textBox12);
+            ResetearCelda(textBox13);
+            ResetearCelda(textBox14);
 
-            ResetearCela(textBox20);
-            ResetearCela(textBox21);
-            ResetearCela(textBox22);
-            ResetearCela(textBox23);
-            ResetearCela(textBox24);
+            ResetearCelda(textBox20);
+            ResetearCelda(textBox21);
+            ResetearCelda(textBox22);
+            ResetearCelda(textBox23);
+            ResetearCelda(textBox24);
 
-            ResetearCela(textBox30);
-            ResetearCela(textBox31);
-            ResetearCela(textBox32);
-            ResetearCela(textBox33);
-            ResetearCela(textBox34);
+            ResetearCelda(textBox30);
+            ResetearCelda(textBox31);
+            ResetearCelda(textBox32);
+            ResetearCelda(textBox33);
+            ResetearCelda(textBox34);
 
-            ResetearCela(textBox40);
-            ResetearCela(textBox41);
-            ResetearCela(textBox42);
-            ResetearCela(textBox43);
-            ResetearCela(textBox44);
+            ResetearCelda(textBox40);
+            ResetearCelda(textBox41);
+            ResetearCelda(textBox42);
+            ResetearCelda(textBox43);
+            ResetearCelda(textBox44);
 
             MessageBox.Show("Introduzca los datos del nuevo tablero");
         }
 
-        private void ResetearCela(TextBox texto)
+        private void ResetearCelda(TextBox texto)
         {
             texto.Clear();
             texto.Enabled = true;
