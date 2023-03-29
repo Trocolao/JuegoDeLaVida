@@ -8,7 +8,7 @@ namespace JuegoDeLaVida.MVC.Controllers
     {
         Tablero tablero = new Tablero(5, 5);
         Gestor gestor= new Gestor();
-        public void convertirMatriz(string[,] matriz, Tablero tablero)
+        public void convertirMatriz(bool[,] matriz, Tablero tablero)
         {
             for(int i = 0; i < 5; i++)
             {
@@ -16,29 +16,11 @@ namespace JuegoDeLaVida.MVC.Controllers
                 {
                     if (tablero.TableroCelulas[i, j].TieneVida)
                     {
-                        matriz[i, j]= "*";
+                        matriz[i, j]= true;
                     }
                     else
                     {
-                        matriz[i, j]= "-";
-                    }
-                }
-            }
-        }
-        public void convertirTablero(Matriz matriz, Tablero tablero)
-        {
-            string asterisco = "*";
-            for (int i = 0; i < matriz.Filas; i++)
-            {
-                for (int j = 0; j < matriz.Columnas; j++)
-                {
-                    if (matriz.Matriz1[i,j]==asterisco)
-                    {
-                        tablero.TableroCelulas[i, j].TieneVida = true;
-                    }
-                    else
-                    {
-                        tablero.TableroCelulas[i, j].TieneVida = false;
+                        matriz[i, j]= false;
                     }
                 }
             }

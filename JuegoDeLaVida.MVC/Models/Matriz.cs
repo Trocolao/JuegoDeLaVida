@@ -5,7 +5,7 @@
         
         public int Iteraciones { get; set; }
 
-        public string[,] Matriz1 { get; set; }
+        public bool[,] Matriz1 { get; set; }
        
         public int Filas { get; set; }
        
@@ -15,7 +15,7 @@
             
             Filas = 5;
             Columnas = 5;
-            Matriz1 = new string[Filas, Columnas];
+            Matriz1 = new bool[Filas, Columnas];
         }
       
     }
